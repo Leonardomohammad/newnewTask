@@ -7,7 +7,8 @@
     <script  src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><!-- Babel CDN for JSX transformation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-   
+    <link rel="icon" href="/images/logo.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
@@ -49,10 +50,6 @@
                         transition: 4s all ease;
                         }
 .video-info{
-    
-   
-    /* border: 2px solid transparent; */
-    /* border: 2px solid transparent; */
     height: 300px;
     width: auto;
     max-width: 70%;
@@ -65,9 +62,6 @@
     box-shadow: 2px 2px 2px 3px gray;
 
     button{
-        
-    /* width: 100%; */
-    /* padding: 10px; */
     width:auto;
     border: none;
     border-radius: 5px;
@@ -140,21 +134,9 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 .joinUs{
     display: grid;
-    /* flex-wrap: wrap; */
     grid-template-columns: 2fr 1fr;
-    /* align-content: flex-end; */
     align-items: center;
     justify-content: space-evenly;
 }
@@ -300,16 +282,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
         .pp{color: black;
     background-color: white;
     margin-top: 70px;}
@@ -346,7 +318,6 @@
 
         }
         a{
-                /* left: 50%; */
     background-color: white;
     color: black;
     border-radius: 50%;
@@ -444,31 +415,11 @@
     opacity: 1;
     transform: translate(-50%, -50%);
 }
-    /* *::after,
-    *::before {
-        box-sizing: border-box;
-    }
-    
-    ::selection {
-        background-color: grey;
-        color: white;
-    }
-    
-    ::-moz-selection {
-        background-color: grey;
-        color: white;
-    } */
-    /* 
-    @import url("https://use.typekit.net/euz1eqv.css"); */
-  
+   
 footer{
     background-color:black;
     color:white;
      }
-
-
-
-
 
     html {
         background: #fff;
@@ -1302,8 +1253,7 @@ transition: opacity 0.3s ease, transform 0.3s ease;
 			<div class="logo">
             </div>
 			<div class="burger">
-            <i id="click"  onclick="a()" class="fa fa-bars
-        black" ></i></div>
+            <i id="click"  onclick="a()" class="fa fa-bars black" ></i></div>
                 <div id="insideBurger" class="insideBurger" style="display:none;" >
                 <a class="active nav__link"  onclick="scrollToTarget('section-1')">من نحن</a>
 				<a class="nav__link" onclick="scrollToTarget('section-2')">   اقسامنا</a>
@@ -1430,7 +1380,7 @@ transition: opacity 0.3s ease, transform 0.3s ease;
 
     
 </footer>
-<script>
+<script >
     function showMaritalStatus() {
         alert('send');
     }
@@ -1471,20 +1421,24 @@ document.getElementById(id).style.opacity='1';
 
 let click=document.getElementById('burger');
         let sideBar=document.getElementById('insideBurger');
+        let clicked=document.getElementById('click');
 
    function a(){
+    // console.log(clicked.,'here we have clicked')
             let sStyle=sideBar.style.display;
 
             if(sStyle=="none"){
 sideBar.style.transform="translateX(0px)";
 sideBar.style.display="block";
 sideBar.style.transition="1s all ease";
+clicked.className="fa fa-close";
             }
             else{
 
                 sideBar.style.display="none";
 sideBar.style.transform="translateX(1000px)";
 
+clicked.className="fa fa-bars";
             }
 
         }
@@ -1496,11 +1450,12 @@ sideBar.style.transform="translateX(1000px)";
 
                 sideBar.style.display="none";
 sideBar.style.transform="translateX(1000px)";
+
+clicked.className="fa fa-bars";
             }
 }
         
 
-            document.addEventListener('click',removeSideBar());
 
 document.addEventListener('scroll',()=>{
 let targetElement=document.getElementById('section-5')
