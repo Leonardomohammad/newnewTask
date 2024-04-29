@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICan</title>
+    <script  src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script  src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script><!-- Babel CDN for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+
+<link rel="stylesheet" href="style.css">
+<style>
+
+    .fa{
+        font-size:xxx-large !important;
+    }
+    #footerA1{
+        
+    transform: translateX(-300px);
+    transition: 3s all ease;
+    }
+    #footerA2{
+        
+        transform: translateX(-300px);
+        transition: 4s all ease;
+        } 
+         #footerA3{
+        
+            transform: translateY(0px);
+            opacity:0;
+            transition: 3s all ease;
+            }  #footerA4{
+        
+                transform: translateX(0px);
+                opacity: 0;
+                transition: 4s all ease;
+                }  #footerA5{
+        
+                    transform: translateX(300px);
+                    transition: 3s all ease;
+                    }  #footerA6{
+        
+                        transform: translateX(300px);
+                        transition: 4s all ease;
+                        }
+.video-info{
+    
+   
+    /* border: 2px solid transparent; */
+    /* border: 2px solid transparent; */
+    height: 300px;
+    width: auto;
+    max-width: 70%;
+    height: auto;
+    min-height: 400px;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-left: auto;
+    color: black;
+    box-shadow: 2px 2px 2px 3px gray;
+
+    button{
+        
+    /* width: 100%; */
+    /* padding: 10px; */
+    width:auto;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    font-size: xx-large;
+    align-self: start;
+    
+    border: 2px yellow solid;
+    }
+    p{
+        
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+    i{
+        background-color:black;
+        color:white;
+    border: 2px yellow solid;
+    }
+    i:hover{
+        background-color:yellow;
+        color:black;
+    border: 2px black solid;
+    }
+    }
+    h3{
+        
+    font-style: oblique;
+    font-weight: bolder;
+    color:black;
+    }
+
+}
+
+.video-details{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+     
+        .video-div:nth-child(odd) {
+            background-color: yellow;
+            color: black;
+        }
+
+        .video-div:hover {
+            transform: scale(1.1);
+        }
+
+        .video-div h3,
+        .video-div p {
+            margin: 0;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-div:hover h3,
+        .video-div:hover p {
+            opacity: 1;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.joinUs{
+    display: grid;
+    /* flex-wrap: wrap; */
+    grid-template-columns: 2fr 1fr;
+    /* align-content: flex-end; */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hand-icon {
+    font-size:100px;
+    width: 100px;
+    height: 100px;
+    background-color: #f8b400;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    animation: wave 2s infinite;
+    justify-self: end;
+}
+
+.finger {
+    width: 10px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.finger:nth-child(1) {
+    left: 25px;
+    transform-origin: bottom left;
+    animation: wave-finger 2s infinite;
+}
+
+.finger:nth-child(2) {
+    left: 45px;
+    transform-origin: bottom left;
+    animation: wave-finger 2s infinite;
+}
+
+.finger:nth-child(3) {
+    left: 65px;
+    transform-origin: bottom left;
+    animation: wave-finger 2s infinite;
+}
+
+.finger:nth-child(4) {
+    left: 85px;
+    transform-origin: bottom left;
+    animation: wave-finger 2s infinite;
+}
+
+.thumb {
+    width: 20px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+    transform-origin: bottom right;
+    animation: wave-thumb 2s infinite;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25%, 75% {
+        transform: rotate(-30deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes wave-finger {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    25%, 75% {
+        transform: scaleY(0.8);
+    }
+    50% {
+        transform: scaleY(1.2);
+    }
+}
+
+@keyframes wave-thumb {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25%, 75% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-15deg);
+    }
+}
+
+
+
+
+
+
+
+
+.text-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#animated-text {
+    display: inline-block;
+    border-bottom: 2px solid yellow;
+}
+
+.letter {
+   
+    opacity: 0;
+    transform: translateX(-10px);
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.border-animation {
+    animation: borderAnimation 1s forwards infinite;
+}
+
+@keyframes borderAnimation {
+    from {
+        border-color: transparent transparent white transparent;
+    }
+    to {
+        border-color: transparent transparent white white;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .pp{color: black;
+    background-color: white;
+    margin-top: 70px;}
+   
+    #socialMedia{ 
+    display: flex;
+    justify-content: space-evenly;
+
+    }
+    footer{
+
+    
+    h2{
+    font-size: xx-large;
+    width: auot;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 4px gray;}
+
+        ul{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0px;
+        }
+        img{
+            
+    display: inline;
+    max-width: 30px;
+    max-height: 30px;
+    border-radius: 5px;
+        }
+        i:hover{
+            transform: scale(1.5);
+
+        }
+        a{
+                /* left: 50%; */
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        }
+        a:hover{
+            background-color:yellow;
+            cursor: pointer;
+        }
+    }
+ .icons{ 
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    height: auto;
+    width: 40px;
+    text-align: center;
+    
+    margin-top: 3px;
+ }
+ .icons:hover{
+    transition: all 0.9s ease;
+    transform: scale(2);
+    
+    background-color:black;
+            cursor:pointer;
+ }
+.reveal{
+        position: relative;
+        transform: translateY(30px);
+        opacity: 0;
+        transition: 0.8s all ease;
+      }
+      
+      .reveal.active{
+        transform: translateY(0);
+        opacity: 1;
+      }
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video-div {
+
+    position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 20px;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 4px gray;
+}
+
+.video-div:nth-child(odd) {
+    background-color: yellow;
+    color: black;
+}
+
+.video-div h3,
+.video-div p {position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: white;
+    border: 3px yellow solid;
+    font-size: 25px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.video-div:hover {
+    
+    transform: scale(1.1);
+}
+
+.video-div:hover h3,
+.video-div:hover p {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+    /* *::after,
+    *::before {
+        box-sizing: border-box;
+    }
+    
+    ::selection {
+        background-color: grey;
+        color: white;
+    }
+    
+    ::-moz-selection {
+        background-color: grey;
+        color: white;
+    } */
+    /* 
+    @import url("https://use.typekit.net/euz1eqv.css"); */
+  
+footer{
+    background-color:black;
+    color:white;
+     }
+
+
+
+
+
+    html {
+        background: #fff;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+    }
+   
+    body {
+        overflow-x: hidden;
+        margin:0px;
+        width:100vw;
+    background-image: linear-gradient(90deg, black, transparent, transparent, black);
+    }
+    
+    header {
+      
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+
+    background-position: center top;
+    background-size: auto 200px;
+    background-repeat: repeat-x;
+    /* background-color: ghostwhite; */
+  
+        .inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    /* justify-content: center; */
+    position: relative;
+    justify-content: space-around;
+        }
+    
+        .logo {
+    display: block;
+    /* width: 76px; */
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background-color: transparent;
+    text-align: center;
+    background-image: url(/images/logo.png);
+    width: 150px;
+    height: 90px;
+    border-radius: 10px;
+    /* background-image: url(/images/lastNews.jpg); */
+    background-size: cover;
+    background-position: center;
+            /* display: block;
+            width: 76px;
+            height: 90px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: white;
+            text-align: center; */
+    
+            .fa {
+
+    display: inline-block;
+    font: normal normal normal 14px / 1 FontAwesome;
+    font-size: xxx-large;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 50px;
+    -moz-osx-font-smoothing: grayscale;
+}
+          img {
+          
+    margin-left: 5px;
+    width: 60px;
+    margin-top: 10px;
+    height: 90%;
+    border-radius: 5px; 
+ }
+        }
+    
+        nav {
+            display: none;
+    
+            a {
+              
+    font-family: 'Arial', serif;
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 18px;
+    cursor: pointer;
+    width:auto;
+     /* Initial border style */
+            background-size: 200% 200%; /* Larger size to accommodate transition */
+            background-position: bottom left; /* Start position for gradient */
+            transition: background-position 0.4s ease, border-color 1s ease;
+            /* Ensure text is visible over the gradient */
+            color: white;
+        
+    border: black 3px solid;
+    border-radius: 5px;
+
+        /* Hover effect for the h3 element */
+        &:hover {
+
+            border-color: black; /* Change border color on hover */
+            border-radius:5px;
+            background-image: linear-gradient(to top right, transparent 50%, white 50%);
+            background-position: top right; 
+            color:black;
+            /* Transition background position on hover */
+        }
+/* 
+             &:hover {
+                    color: white;
+                    cursor: pointer;
+                    background-color: black;
+                    transform: scale(1.1);
+                
+    border: yellow 3px solid;
+                } */
+            }
+    
+            @media screen and (min-width: 940px) {
+                display: block;
+            }
+        }
+    
+        .burger {
+            display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding-left: 30px;
+           color:white;
+
+    
+            @media screen and (min-width: 940px) {
+                display: none;
+             
+            }
+        }
+        .burger:hover{
+            cursor: pointer;
+            transform:scale(1.1);
+  
+        }
+.insideBurger{
+
+    transform: translateX(1000px);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    /* height: 50vh; */
+    width: 50%;
+    color: white;
+    /* transform: translate(0, -100%);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}
+        /* .insideBurger--active {
+    transform: translate(0, 0);
+} */
+.nav__link {
+    /* background-color:rgb(247, 185, 105); */display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    text-decoration: none;
+    font-size: 24px;
+    background: #000;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 20px;
+
+&:hover {
+    border: solid 2px yellow;
+                    color: white;
+                    cursor: pointer;
+                    background-color:yellow;
+                }
+
+            }
+    
+    }
+
+    .section{
+height:100vh;
+width:100vw;
+margin:0px;
+    }
+    .section-1{    background-image: url(/images/web.jpg);
+    background-size: cover;
+    
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white !important;
+
+    }
+    #myVideo{
+     height:100vh;
+     width:auto;
+     object-fit: contain;
+    }
+    .content {
+
+        text-align: center;
+    position: absolute;
+    top: 25vh;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    height: 200px
+}
+
+.section-1-test{
+    height: 40px;
+    width: 90%;
+    margin: 15px;
+    /* margin-top: -15px; */
+    /* margin-left: 20%; */
+    /* border: solid 2px blanchedalmond; */
+    /* color: white; */
+    cursor: pointer;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.section-1-text-1{
+    img{
+        
+    margin-top: -20px;
+    height: 90%;
+    border-radius: 5px;
+
+    }
+}
+
+.section2Div{
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+h2, h3 {
+    text-transform: capitalize;
+    margin: 40px 0 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+.thumbnail-slider-list a > span {
+    display: block;
+    max-height: 100%;
+    width:200px;
+    height:305px;
+    overflow: hidden;
+    border: 1px solid rgba(211, 211, 211, .7);
+    border-radius: 4px;
+    background-color: rgba(211, 211, 211, 0.25);
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, .01), rgba(0, 0, 0, .1));
+}
+#sectinoVideo{
+    width:200px;
+}
+.videoContent{
+    width:200px;
+    height:150px;
+
+    p{
+font-size:large;
+color:white;
+
+
+    }
+}
+.videoContentSign{ 
+       position: relative;
+    margin-left: 30%;
+    color: rgb(255 238 8);
+    background-color: black;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 50px;
+    height: 60px;
+    padding-left: 20px;
+}
+.programmingDivStyle{
+
+    position:relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 0px;
+}
+    .ContentSign{
+        background-color: black;
+    color: rgb(255 238 8);
+    width: 45px;
+    height: 60px;
+    font-size: 30px;
+    border-radius: 50px;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 20px;
+    }
+    .ContentSign:hover{
+      color: black;
+    background-color: rgb(255 238 8);
+
+    }
+    .section3Div{
+        height:90vh;
+        width:90vw;
+        margin-left:5vw;
+
+        display:grid;
+        grid-template-areas: 
+        'left left right right'
+        'left left right right'
+        'left left middle middle'
+        
+        'bottom bottom middle middle'
+        'bottom bottom middle middle';
+        grid-gap: 10px;
+        .div1{
+    cursor: pointer;        
+    transition: transform 0.3s ease;
+grid-area:left;
+
+border-radius: 10px;
+
+box-shadow: 2px 2px 5px 4px gray;
+    height: 300px;
+    width: 50vw;
+    
+    background-image:url('/images/lastNews.jpg');
+        
+        background-size:cover;
+        background-position:center;
+
+       div{
+
+    
+            transform: translate(0%, 0%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        }
+.div1:hover{
+    
+    transform: scale(1.1);
+}
+.div1:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+        .div2{
+    cursor: pointer;        
+            
+            background-color:black;
+            grid-area:right;
+            
+    border-radius: 10px;
+    
+    box-shadow: 2px 2px 5px 4px gray;
+    
+    background-image:url('/images/newsPaper.jpg');
+        
+        background-size:cover;
+        background-position:center;
+    height: 200px;
+    width: 40vw;
+    
+    div{
+
+    
+transform: translate(0%, 0%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+        }
+        .div2:hover{
+    
+    transform: scale(1.1);
+}
+.div2:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+        .div3{
+    cursor: pointer;        
+            width: 40vw;
+    height: 300px;
+            background-color:black;
+            grid-area:middle;
+            
+    border-radius: 10px;
+    
+    box-shadow: 2px 2px 5px 4px gray;
+    
+    background-image:url('/images/paper.jpg');
+        
+        background-size:cover;
+        background-position:center;
+        
+       div{
+
+    
+transform: translate(0%, 0%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+    
+        }
+        .div3:hover{
+    
+    transform: scale(1.1);
+}
+.div3:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}       
+        .div4{
+    cursor: pointer;        
+
+            height: 200px;
+    width: 50vw;
+            grid-area:bottom;
+            
+    border-radius: 10px;
+    
+    box-shadow: 2px 2px 5px 4px gray;
+    
+    background-image:url('/images/comingSoon.jpg');
+        
+        background-size:cover;
+        background-position:center;
+        
+       div{
+
+    
+transform: translate(0%, 0%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+        }
+        .div4:hover{
+    
+    transform: scale(1.1);
+}
+.div4:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+
+
+
+    }
+    @media screen and (max-width:900px){
+        .video-info{
+            
+            width: 200px;
+            max-width: 400px;
+            min-width: 300px;
+            margin-top: 20px;
+            margin-left: 5%;
+            border-radius: 5px;
+                }
+        .video-details{
+            
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns:1fr;
+        }
+        .video-div{
+                /* width: 200px; */
+                width: 300px;
+            height: 300px;
+            margin: 20px;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px 4px gray
+        }
+    }
+
+    .videoLastNews{
+    height: 100%;
+    min-width: 100%;
+    }
+    #div1,#div2,#div3,#div4{
+        background: rgba(0, 0, 0, 0.5);
+    color: rgb(241, 241, 241);
+    
+    }
+    .section-2,.section-3{
+        h2{
+    font-size: xx-large;
+    width: auot;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 4px gray;
+color:black;
+font-weight: bolder;
+font-style: italic;}
+    }
+    .section-4{
+        
+        background-image:url('/images/joinUs.jpg');
+        
+       background-size:cover;
+       background-position:center;
+       color:white;
+       h2{
+        
+    color: black;
+    font-size: xx-large;
+    width: auot;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 4px gray;
+    font-style: italic;
+    font-stretch: semi-expanded;
+    font-weight: bolder;
+
+       }
+    }
+    .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+     color: #000; /* Default text color */
+       background-size:cover;
+       background-position:center;
+        }
+       #root{
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border: 3px solid #ff0;
+    border-radius: 10px;
+    background-color: #000;
+    color: #eee;
+    margin-left: 0px;
+    font-size: xx-large;
+    box-shadow: 2px 2px 5px 4px gray;
+      h2{
+        color:white !important;
+      }
+}
+        .firstLastNames{
+            display:flex;
+            flex-flow:columns;
+            width:100%;
+            height:auto;
+
+        }
+        input[type="text"]{
+            
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-left:5%;
+            border: 3px solid black;
+            border-radius: 10px;
+            
+            transform: translate(0%, 0%);
+   
+    transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
+        
+        input[type="email"], select {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            margin-left:10%;
+            border: 3px solid black;
+            border-radius: 10px;
+            
+            transform: translate(0%, 0%);
+   
+    transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            font-size:xx-large;
+            
+    border: yellow 2px solid;
+        }
+        button:hover {
+            background-color: #ff0; /* Change background color on hover */
+            color: #000; /* Change text color on hover */
+        }
+        #centeredLogo{
+            transform: translateY(-1000px);
+    transition: all ease 2s;
+        height: 100px;
+        width: 100px;
+        position: aboslute;
+        margin-top: -25px;
+        margin-left: 48%;
+        border-radius: 50px;
+        background-color: white;
+        border: 5px white solid;
+}
+        @media screen and (max-width: 400px) {
+            
+        #centeredLogo{
+margin-left:40%;
+        }
+           #root {
+                height: 70vh;
+    width: 100%;
+
+            }
+            .container{
+                
+            display: flex;
+            align-items: center;
+            }
+        }
+        input[type="text"]:hover,input[type="email"]:hover, select:hover{
+
+    transform: scale(1.1);
+
+        }
+        #ii{
+            position: absolute;
+            transform: translateY(1000PX);
+            transition: 3s all ease;
+            font-size:xxx-large;
+    bottom: 170px;
+    left: 50%;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    height: auto;
+    width: 40px;
+    text-align: center;
+    animation: mymove 3s infinite;
+        }
+        #ii:hover{
+            background-color:yellow;
+            transform:scale(1.3);
+            cursor:pointer;
+        }
+        @keyframes mymove{
+0% {bottom:170px; background-color:white;}
+  50%{ bottom:165px; background-color:yellow;}     
+100%{bottom:170px; background-color:white;}
+ 
+}
+        
+    .videos{
+        
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+  
+    @media screen and (max-width: 400px) {
+   .section-4{
+    background-color: transparent;
+    background-image:none;
+   }
+         #section-3{
+            height:auto;
+         }    
+    .section3Div{
+display:flex;
+flex-flow:column;
+height:auto;
+width:100vw;
+        .div1{
+            
+    transition: transform 0.3s ease;
+height: 70vh;
+    width: 80vw;
+    margin-left:5vw;
+        
+
+       div{
+
+    
+            transform: translate(0%, 0%);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        }
+.div1:hover{
+    
+    transform: scale(1.1);
+}
+.div1:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+        .div2{
+            
+            background-color:black;
+            
+        height: 70vh;
+    width: 80vw;
+    margin-left:5vw;
+    
+    div{
+
+    
+transform: translate(0%, 0%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+        }
+        .div2:hover{
+    
+    transform: scale(1.1);
+}
+.div2:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+        .div3{    height: 70vh;
+    width: 80vw;
+    margin-left:5vw;
+            background-color:black;
+            
+        
+       div{
+
+    
+transform: translate(0%, 0%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+    
+        }
+        .div3:hover{
+    
+    transform: scale(1.1);
+}
+.div3:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+        .div4{    height: 70vh;
+    width: 80vw;
+    margin-left:5vw;
+            
+        
+       div{
+
+    
+transform: translate(0%, 0%);
+opacity: 0;
+transition: opacity 0.3s ease, transform 0.3s ease;
+}
+        }
+        .div4:hover{
+    
+    transform: scale(1.1);
+}
+.div4:hover div{
+    
+    opacity: 1;
+    /* transform: translate(-50%, -50%); */
+}
+
+
+
+    }  
+    header{
+        width:100vw;
+    } 
+    .content{
+        width:100vw;
+    }
+            .section-1{    background-image: url(/images/web.jpg);
+    background-size: cover;
+    
+    background-position:center;
+    background-repeat:no-repeat;
+    color:white !important;
+
+    }
+        
+            }
+    </style>
+
+
+</head>
+<body>
+	<header>
+		<div class="inner">
+			<div class="logo">
+            </div>
+			<div class="burger">
+            <i id="click"  onclick="a()" class="fa fa-bars
+        black" ></i></div>
+                <div id="insideBurger" class="insideBurger" style="display:none;" >
+                <a class="active nav__link"  onclick="scrollToTarget('section-1')">من نحن</a>
+				<a class="nav__link" onclick="scrollToTarget('section-2')">   اقسامنا</a>
+				<a class="nav__link" onclick="scrollToTarget('section-3')">اخرالاخبار</a>
+                
+				<a  class="nav__link" onclick="scrollToTarget('section-4')">    انضم الينا</a>
+				<a  class="nav__link" onclick="scrollToTarget('section-5')">  تواصل معنا</a>
+            
+            </div>
+     
+			<nav id="navv" >
+				<a class="active"  onclick="scrollToTarget('section-1')">من نحن</a>
+				<a onclick="scrollToTarget('section-2')">  اقسامنا</a>
+				<a  onclick="scrollToTarget('section-3')">اخرالاخبار</a>
+				<a  onclick="scrollToTarget('section-4')">    انضم الينا</a>
+				<a  onclick="scrollToTarget('section-5')">  تواصل معنا</a>
+            
+
+
+			</nav>
+		</div>
+	</header>
+    <main>
+        
+   
+<section id="section-1" class="section section-1">
+   
+<div class="content "  >
+
+<div class="section-1-text-1">
+
+    
+			<div id="centeredLogo">
+                <video src="/images/logo.mp4" loop="" muted autoplay class="videos" style="
+                border-radius: 50px;"></video>
+           
+            </div>
+</div>
+<div class=" section-1-test section-1-text-2 text-container">
+
+   <h3 id="animated-text">To Achieve Your Future Vision We Can Achieve It For You</h3>
+ 
+</div>
+
+</div>
+</div>
+    <i id='ii' class="fa fa-caret-down" style="    height: 50px; position: absolute;
+    bottom: 170px;
+    left: 50%; " onclick="scrollToTarget('section-2')"></i>
+</section>
+
+<section id="section-2" class=" section-2">
+   
+    <h2 class="reveal">اقسامنا</h2>
+    
+<div id="ourSections"></div>
+
+</section>
+<section id="section-3" class="section section-3">
+    <h2 class="reveal">اخرالاخبار و الانشطة</h2>
+<div class="section3Div ">
+    <div class="div1 reveal">
+<div id="div1 " >   <h3>Video 5 Title</h3>
+    <p>Description for Video 5</p>
+
+</div>
+       
+    </div>
+    <div class="div2 reveal" >
+        <div id="div2" >
+            <h3>Video 5 Title</h3>
+            <p>Description for Video 5</p>
+        </div>
+        </div>
+    <div class="div3 reveal" >
+       <div id="div3 reveal">    <h3>Video 5 Title</h3>
+        <p>Description for Video 5</p>
+      
+</div>
+    </div>
+    
+    <div class="div4 reveal" >
+        <div id="div4" >
+            <h3>Video 5 Title</h3>
+            <p>Description for Video 5</p>
+         </div>
+    </div>
+</div>
+</section>
+
+
+<section id="section-4" class="section section-4">
+<h2 class="reveal">انضم الينا</h2>
+<div class="container section">
+    <div id="root"></div>
+</div>
+</section>
+
+    </main>
+<footer id="section-5" class=" section-5">
+    <h2 style="color:white; text-align:center;">ContactUs</h2>
+    <div id="projectsLinks">
+    
+         <ul>
+            <div>
+                <i class="font-size:larger fa fa-phone-square"></i>+963999136824</div>
+           <a href='http://ican.aleppo@gmail.com' target="_blank"><div class="icons"><img src="/images/logoed.jpg" alt=""></div></a>
+        </ul>
+
+</div>
+         <div id="socialMedia" >
+            
+<a id="footerA1" href="https://www.facebook.com/profile.php?id=61554822892511&mibextid=vk8aRt" target="_blank" onshow="callit(id)"><img src="/images/facebook.png" alt="" class="icons"></a>
+<a id="footerA2" href="https://t.me/+8ieZrxCO-0w4M2Jh" target="_blank" onscroll="callit(id)"><img  src="/images/telegram.png" alt="" class="icons"></a>
+<a id="footerA3" href="https://www.instagram.com/ican.aleppo?igshid=MmVlMjlkMTBhMg==" target="_blank" onscroll="callit(id)"><img  src="/images/instagram.jpeg" alt="" class="icons"></a>
+<a id="footerA4"href="https://whatsapp.com/channel/0029VaGsTWj6rsQprCXMu00F" target="_blank" onscroll="callit(id)"><img  src="/images/whatsapp.jpeg" alt="" class="icons"></a>
+<a id="footerA5"href="https://www.youtube.com/@icanaleppo" target="_blank" onscroll="callit(id)"><img  src="/images/youtube.png" alt="" class="icons"></a>
+
+<a id="footerA6" href="https://www.linkedin.com/company/ican-aleppo/" onscroll="callit(id)"><img src="/images/linkedIn.png" alt="" class="icons"></a>
+
+       
+</div>  
+    <div id="copyRights">This website is made and created by Mohammad Fared</div>
+
+    
+</footer>
+<script>
+    function showMaritalStatus() {
+        alert('send');
+    }
+  
+</script>
+<script>
+function callit(id){
+
+
+document.getElementById(id).style.transform='translateX(0px)';
+document.getElementById(id).style.opacity='1';
+}
+
+
+    function scrollToTarget(element) {
+    // Get the target element
+    var targetElement = document.getElementById(element);
+
+    // Calculate the distance from the top of the page to the target element
+    var distanceToTarget = targetElement.offsetTop- 90; // You can adjust the distance here
+    if(element=='section-5'){
+    for(let i=1;i<7;i++){
+    callit(`footerA`+i);
+    }}
+
+    // Scroll to the specific position
+    window.scrollTo({
+      top: distanceToTarget,
+      left:0,
+      
+      behavior: 'smooth' // Smooth scrolling animation
+    });
+
+    //
+
+   removeSideBar();
+  }
+
+let click=document.getElementById('burger');
+        let sideBar=document.getElementById('insideBurger');
+
+   function a(){
+            let sStyle=sideBar.style.display;
+
+            if(sStyle=="none"){
+sideBar.style.transform="translateX(0px)";
+sideBar.style.display="block";
+sideBar.style.transition="1s all ease";
+            }
+            else{
+
+                sideBar.style.display="none";
+sideBar.style.transform="translateX(1000px)";
+
+            }
+
+        }
+
+       const removeSideBar=()=>{
+// console.log('hello i am being called')
+            if(sideBar.style.display!=='none'){
+
+
+                sideBar.style.display="none";
+sideBar.style.transform="translateX(1000px)";
+            }
+}
+        
+
+            document.addEventListener('click',removeSideBar());
+
+document.addEventListener('scroll',()=>{
+let targetElement=document.getElementById('section-5')
+    var distanceToTarget = targetElement.offsetTop-500; // You can adjust the distance here
+    if(window.scrollY>distanceToTarget){
+
+    for(let i=1;i<7;i++){
+    callit(`footerA`+i);
+    }}
+
+
+})
+
+  </script>
+  <script>
+    function reveal() {
+    
+ var reveals = document.querySelectorAll(".reveal");
+
+ for (var i = 0; i < reveals.length; i++) {
+   var windowHeight = window.innerHeight;
+   var elementTop = reveals[i].getBoundingClientRect().top;
+   var elementVisible = 100;
+
+   if (elementTop < windowHeight - elementVisible) {
+     reveals[i].classList.add("active");
+   } else {
+     reveals[i].classList.remove("active");
+   }
+ }
+}
+
+window.addEventListener("scroll", reveal);
+
+       </script>
+       <script >
+const showContent=(element)=>{
+   let target= document.getElementById(element);
+   if(target.style.display=='none')
+   target.style.display='block';
+else
+target.style.display='none';
+
+}
+    const disableContent=(element)=>{
+        let target= document.getElementById(element);
+   if(target.style.display=='none')
+   target.style.display='block';
+else
+target.style.display='none';
+    }  
+      
+      
+      </script>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+document.getElementById('centeredLogo').style.transform="translateY(0px)"
+     document.getElementById('ii').style.transform='translateY(0px)';
+    const textElement = document.getElementById('animated-text');
+
+    // Split text into individual letters
+    const letters = textElement.textContent.split('');
+ // Clear existing text content
+    textElement.textContent = '';
+
+    // Rebuild text content with span elements for each letter
+    letters.forEach((letter, index) => {
+        const span = document.createElement('span');
+        span.textContent = letter;
+        span.className = 'letter';
+        span.style.animationDelay = `${index * 0.1}s`; // Delay each letter's animation
+        textElement.appendChild(span);
+    });
+
+    // Add border animation class after all letters have appeared
+    setTimeout(() => {
+        textElement.classList.add('border-animation');
+    }, letters.length * 100); // Delay border animation
+
+});
+      </script>
+      
+</body>
+</html>
+
+
+  
+    <script type="text/babel">
+      
+      
+      
+            // Define React component
+            const MaritalStatusForm = () => {
+              const [firstName, setFirstName] = React.useState('');
+              const [lastName, setLastName] = React.useState('');
+              const [email, setEmail] = React.useState('');
+              const [maritalStatus, setMaritalStatus] = React.useState('');
+  
+              const handleMaritalStatus = () => {
+                  const statusOptions = ['Single', 'Married', 'Divorced', 'Widowed'];
+                  const randomIndex = Math.floor(Math.random() * statusOptions.length);
+                  const chosenStatus = statusOptions[randomIndex];
+                  setMaritalStatus(chosenStatus);
+              };
+  
+              return (
+                  <div className="reveal">
+                  <div className="joinUs" >
+                      <h2>Join Us Tody </h2>
+                    <div className="hand-icon"> &#9995;</div>
+                    </div>
+                    <div className="firstLastNames">
+                      <input
+                          type="text"
+                          placeholder="First Name"
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
+                      />
+                      <input
+                          type="text"
+                          placeholder="Last Name"
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
+                      />
+                      </div>
+                      <input
+                          type="email"
+                          placeholder="Email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                      />
+                      <select onChange={handleMaritalStatus}>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                      </select>
+        <select>MaritalStatus
+            <option value="male">married</option>
+            <option value="female">single</option>
+            <option value="other">Other</option>
+        </select>
+                      <button type="button">send</button>
+                  </div>
+              );
+          };
+  
+          // Render the component into the root element
+          ReactDOM.render(<MaritalStatusForm />, document.getElementById('root'));      
+      
+      const { useState } = React;
+
+
+
+
+        const VideoGallery = () => {
+            const [selectedVideo, setSelectedVideo] = useState(null);
+            let indexx=['/images/videoEditing.mp4','/images/web.mp4','/images/motionGraphics.mp4','/images/software.jpg','/images/market.mp4','/images/studying.mp4']
+
+            const videos = [
+
+                { id: 1, title: 'تصميم البرمجيات', description: `Android 
+<i class="fa fa-android" style="font-size:48px;color:green"></i> /IOS 
+<i class="fa fa-apple" style="font-size:48px;color:red"></i> /Windows 
+<i class="fa fa-windows" style="font-size:48px;color:blue"></i>`, src: '/images/videoEditing.mp4' },
+                { id: 2, title: 'التصاميم والغرافيكس', description: `قسم التصاميم والغرافيكس  
+                
+<i class="fa fa-paint-brush" style="font-size:48px;"></i>
+ويضم :  انشاء وتصميم  هويات بصرية ولوغو وكروت شخصية ومستندات رسمية وفاتورة الكترونية وبوسترات سوشيال ميديا وبروشورات وسير ذاتية وعروض تقديمية  واعلانات طرقية وكروت زفاف واغلفة كتب وقائمة طعام للمطاعم وواجهات مستخدم ui/ux `, src: '/images/web.mp4' },
+                { id: 3, title: ` المونتاج وتحرير الفيديوهات`, description: ` قسم المونتاج وتحرير الفيديوهات والموشن غرافيك 
+<i class="fa fa-youtube-play" style="font-size:48px;"></i>
+
+ويضم :  انشاء فيديوهات رقمية تعريفية ترويجية واعلانية وانشاء فيديوهات رسومية متحركة وانشاء فيديوهات تصويريةبالاضافة الى انشاء فيديوهات تعليمية وثقافية
+<i class="fa fa-user-md" style="font-size:48px;"></i>`, src: '/images/motionGraphics.mp4' },
+                { id: 4, title: ' الدعم التقني والسوفت وير', description: `قسم الدعم التقني والسوفت وير 
+                &#128187;
+                لجميع الاجهزة الالكترونية من موبايلات الى لابتوبات الى اجهزة لوحية بالاضافة الى الراوترات والشبكات`, src: '/images/software.jpg' },
+                { id: 5, title: ' التسويق الرقمي', description: 'قسم التسويق الرقمي ويضم : انشاء حملات رقمية تسويقية بكافة الطرق عبر البريد الالكتروني وعبر المحتوى وعبر مواقع التواصل الاجتماعي وعبر محركات البحث  فالاضافة الى المتاجر الالكترونية  وادارة صفحات التواصل الاجتماعي', src: '/images/market.mp4' },
+                {id: 6, title:' لمشاريع تخرج للطلاب ', description: `
+              
+                <i class="fa fa-stethoscope" style="font-size:48px;"></i>
+                قسم خاص لمشاريع التخرج لطلاب هندسة المعلوماتية / هندسة حواسيب / هندسة الاتصالات ويوجد ايضا قسم للتدريب العملي والمهني`, src: '/images/studying.mp4'}
+            ];
+  const handleClick = (video) => {
+
+    var targetElement = document.getElementById('section-2');
+
+// Calculate the distance from the top of the page to the target element
+var distanceToTarget = targetElement.offsetTop- 90; // You can adjust the distance here
+                window.scrollTo({
+      top: distanceToTarget,
+      left:0,
+      
+      behavior: 'smooth' // Smooth scrolling animation
+    });
+                setSelectedVideo(video);
+            const x=()=>{ setTimeout(()=>{
+
+                    for(let i=1;i<7;i++){
+   let wanted= document.getElementById(i+`P`);
+   console.log('wanted is here',wanted)
+   if(wanted){
+    console.log('here is the wanted',videos[i-1].description);
+    
+wanted.innerHTML=videos[i-1].description;
+return null;
+   }
+else if(!wanted&&i==6){
+return  x();
+}
+}  },200)}
+x();
+           
+};
+
+            const handleBack = () => {
+                setSelectedVideo(null);
+                
+  
+            };
+ const handleMouseOver=(id)=>{
+    document.getElementById(id).play();
+ }
+ const handleMouseLeave=(id)=>{
+    
+    document.getElementById(id).pause();
+ }
+      const handleLoad=()=>{
+        console.log('loadededddddddddddddddddddddd');
+
+      }
+ return (
+                <div className="video-container">
+                    {selectedVideo ? (
+                        
+                        <div className="video-details" >
+                         
+                            <div className="video-info">
+                            
+                                <button onClick={handleBack}><i className="fa fa-arrow-circle-left"></i></button>
+                                <h3 >{selectedVideo.title}</h3>
+                                <hr/>
+                                <p id={selectedVideo.id+`P`} >{selectedVideo.description}</p>
+                                
+                            </div>
+                            <div className="video-div">
+                            <video src={selectedVideo.src} id={selectedVideo.id} onLoad={()=>handleLoad()} loop  autoplay muted className="videos"></video>
+                        </div>
+                            </div>
+                    ) : (
+                        videos.map((video) => (
+
+                            <div className="video-div" id={video.id+`div`}onMouseEnter={()=>handleMouseOver(video.id)} onMouseLeave={()=>handleMouseLeave(video.id)} onClick={() => handleClick(video)} muted>
+                                <h3>{video.title}</h3>
+
+                                <video src={video.src} id={video.id} key={video.id} loop className="videos"></video>
+                        
+                            </div>
+                        ))
+                    )}
+                </div>
+            );
+        };
+
+        ReactDOM.render(<VideoGallery />, document.getElementById('ourSections'));
+
+    document.getElementById('1div').className="video-div ";
+    </script>
+
